@@ -9,7 +9,7 @@ pipeline {
         }
         stage('merge') {
             steps {
-                bat "git checkout ${branchTo}"
+                bat "git checkout dev"
                 bat "git merge --ff-only -"
                 bat "git push" 
                 
