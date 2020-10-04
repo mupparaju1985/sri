@@ -9,7 +9,7 @@ pipeline {
         }
         stage('merge') {
             steps {
-                sh "git checkout dev"
+                sh "git checkout main"
                 sh "git merge --ff-only -"
                 sh "git push" 
                 
