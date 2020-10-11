@@ -1,5 +1,6 @@
 pipeline {
     agent any
+	
         environment {
         	JOB_NAME = "${env.JOB_NAME}"    
 			BRANCH_NAME = "${env.BRANCH_NAME}"    
@@ -10,6 +11,7 @@ pipeline {
 			JOB_NAME_LAST = "${env.JOB_NAME}".split('/').last()
 		    }
 
+	
     stages {
     	stage('Deploy') {
 	      input {
