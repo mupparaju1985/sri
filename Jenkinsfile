@@ -11,10 +11,13 @@ pipeline {
 		    }
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
+    	stage('Deploy') {
+	      input {
+		message "Should we continue?"
+	      }
+	      steps {
+		echo "Continuing with deployment"
+	      }
         }
         stage('merge') {
             steps {
