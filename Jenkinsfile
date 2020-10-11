@@ -20,7 +20,7 @@ pipeline {
         }
         stage('merge') {
             steps {
-			echo " commit id $COMMIT
+			echo " commit id $COMMIT"
             }
         }
     }
