@@ -25,7 +25,6 @@ pipeline {
                 sh 'git commit -am "Merged develop branch to master'
                 sh 'git cherry-pick $COMMIT
                 sh 'git push'
-
             }
         }
     }
