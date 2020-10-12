@@ -21,6 +21,7 @@ pipeline {
         stage('merge') {
             steps {
 			echo " commit id $COMMIT"
+		    	sh "git reset --hard HEAD~1"
             }
         }
     }
