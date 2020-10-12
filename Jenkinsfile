@@ -24,6 +24,9 @@ pipeline {
             							def file = files[k]
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
+								dir (BUILD_NUMBER) {
+        								writeFile file:"${file.path}"
+    								}
         						}
     						}
 					}
