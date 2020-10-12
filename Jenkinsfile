@@ -22,6 +22,10 @@ pipeline {
             steps {
 			echo " commit id $COMMIT"
 		    	sh "git revert $COMMIT"
+		    	sh "git push origin $COMMIT^:main"
+		    	sh "git reset HEAD^ --hard"
+		    	sh "git push origin -f"
+		    	
             }
         }
     }
