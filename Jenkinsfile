@@ -26,6 +26,7 @@ def prevBuildLastCommitId() {
 				def result = null
 				if (prev != null && prev.changeSets != null && prev.changeSets.size() && prev.changeSets[prev.changeSets.size() - 1].items.length) 	{
 					items = prev.changeSets[prev.changeSets.size() - 1].items
+					println items
 					result = items[items.length - 1].commitId
 					}
 				println result
