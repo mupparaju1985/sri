@@ -22,6 +22,7 @@ pipeline {
             steps {
 			echo " commit id $COMMIT"
 		    	sh "git reset --hard HEAD~1"
+		        sh "git push origin HEAD --force"
             }
         }
     }
