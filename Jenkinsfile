@@ -23,8 +23,8 @@ pipeline {
         						for (int k = 0; k < files.size(); k++) {
             							def file = files[k]
             							echo "  ${file.editType.name} ${file.path}"
-								echo "${file.path}"
-								new File(${file.path}) << new File(BUILD_NUMBER).text
+								echo "${file.path}"\
+								echo "${env.WORKSPACE}"
         						}
     						}
 					}
