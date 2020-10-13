@@ -15,6 +15,7 @@ pipeline {
 				script { 
 					def workspace = WORKSPACE
 					workspace = env.WORKSPACE
+					echo "Current workspace is ${env.WORKSPACE}"
 					def changeLogSets = currentBuild.changeSets
 					for (int i = 0; i < changeLogSets.size(); i++) {
     						def entries = changeLogSets[i].items
@@ -26,9 +27,6 @@ pipeline {
             							def file = files[k]
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
-								dir (BUILD_NUMBER) {
-        								writeFile file: workspace/"${file.path}"
-    								}
 							}
     						}
 					}
