@@ -13,7 +13,8 @@ pipeline {
     	stage('Deploy') {
 		         steps {
 				script { 
-					sh "mkdir -p ${BUILD_NUMBER}"
+					File f = new File("$BUILD_NUMBER")
+					f.mkdirs()
 					def workspace = WORKSPACE
 					workspace = env.WORKSPACE
 					echo "Current workspace is ${env.WORKSPACE}"
