@@ -27,9 +27,9 @@ pipeline {
             							def file = files[k]
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
-								sh """
-								      mkdir -p ${env.WORKSPACE}/BUILD_NUMBER
-								 """
+								 dir (BUILD_URL) {
+									
+								  }
 							}
     						}
 					}
