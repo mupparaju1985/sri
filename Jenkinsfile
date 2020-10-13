@@ -13,6 +13,8 @@ pipeline {
     	stage('Deploy') {
 		         steps {
 				script { 
+					def workspace = WORKSPACE
+					workspace = env.WORKSPACE
 					def changeLogSets = currentBuild.changeSets
 					for (int i = 0; i < changeLogSets.size(); i++) {
     						def entries = changeLogSets[i].items
@@ -25,7 +27,7 @@ pipeline {
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
 								dir (BUILD_NUMBER) {
-        								writeFile file: "${file.path}"
+        								writeFile file: workspace/"${file.path}"
     								}
 							}
     						}
