@@ -8,6 +8,7 @@ pipeline {
 	BUILD_URL ="${env.BUILD_URL}"
 	JOB_NAME_FIRST = "${env.JOB_NAME}".split('/').first()
 	JOB_NAME_LAST = "${env.JOB_NAME}".split('/').last()
+	TEMP_DIR = ''
 	}
     stages {
     	stage('Deploy') {
