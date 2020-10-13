@@ -14,7 +14,7 @@ pipeline {
     	stage('Deploy') {
 		         steps {
 				script { 
-					sh "mkdir -p $BUILD_NUMBER >> text.txt"
+					sh "mkdir -p $BUILD_NUMBER"
 					def workspace = WORKSPACE
 					workspace = env.WORKSPACE
 					echo "Current workspace is ${env.WORKSPACE}"
