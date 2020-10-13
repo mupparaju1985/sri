@@ -29,6 +29,7 @@ pipeline {
 								echo "${file.path}"
 								dir (BUILD_NUMBER)	{
 									writeFile file: ${env.WORKSPACE}/${file.path}
+								}
     						}
 					}
 				}
