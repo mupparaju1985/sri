@@ -28,7 +28,6 @@ pipeline {
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
 								echo "{env.WORKSPACE}/${file.path}"
-								}
 							}
 						}
 					}
