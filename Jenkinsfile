@@ -15,6 +15,9 @@ pipeline {
 		         steps {
 				script { 
 					def tempDir = sh script:"mkdir -p $BUILD_NUMBER", returnStdout: true
+					TEMP_DIR = tempDir.replace("/n", "")
+                    			env.TEMP_DIR = TEMP_DIR
+					echo " temo dir $env.TEMP_DIR"
 					def workspace = WORKSPACE
 					workspace = env.WORKSPACE
 					echo "Current workspace is ${env.WORKSPACE}"
