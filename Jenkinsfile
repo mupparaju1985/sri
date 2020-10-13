@@ -13,7 +13,7 @@ pipeline {
     	stage('Deploy') {
 		         steps {
 				script { 
-					sh "mkdir -p $BUILD_NUMBER"
+					def tempFolder = tempFolder(sh "mkdir -p $BUILD_NUMBER")
 					def workspace = WORKSPACE
 					workspace = env.WORKSPACE
 					echo "Current workspace is ${env.WORKSPACE}"
@@ -26,11 +26,10 @@ pipeline {
         						def files = new ArrayList(entry.affectedFiles)
         						for (int k = 0; k < files.size(); k++) {
             							def file = files[k]
-            							echo "  ${file.editType.name} ${file.path}"
-								echo "${file.path}"
+            							echo "  ${file.editType.name} ${file.path}" 
+								echo "${file.path}" >> tempFolder
 								echo "${env.WORKSPACE}/${file.path}"
 								echo "${env.WORKSPACE}/$BUILD_NUMBER"
-								new File("${env.WORKSPACE}/${file.path}") << new File("${env.WORKSPACE}/$BUILD_NUMBER").text
 							}
 						}
 					}
