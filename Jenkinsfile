@@ -30,11 +30,7 @@ pipeline {
 								echo "${file.path}"
 								echo "${env.WORKSPACE}/${file.path}"
 								echo "${env.WORKSPACE}/$BUILD_NUMBER"
-								String sourceDir = "${env.WORKSPACE}/${file.path}"
-								String destinationDir ="${env.WORKSPACE}/$BUILD_NUMBER"
-								new AntBuilder().copy(todir: destinationDir) {
-								    fileset(dir: sourceDir)
-								}
+								sh "cp ${env.WORKSPACE}/${file.path} ${env.WORKSPACE}/$BUILD_NUMBER"
 							}
 						}
 					}
