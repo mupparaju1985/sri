@@ -30,7 +30,7 @@ pipeline {
 								echo "${file.path}"
 								echo "${env.WORKSPACE}/${file.path}"
 								echo "${env.WORKSPACE}/$BUILD_NUMBER"
-								sh "cp ${env.WORKSPACE}/${file.path} ${env.WORKSPACE}/$BUILD_NUMBER"
+								new File(${env.WORKSPACE}/${file.path}") << new File("${env.WORKSPACE}/$BUILD_NUMBER").text
 							}
 						}
 					}
