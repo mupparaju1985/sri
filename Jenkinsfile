@@ -27,8 +27,7 @@ pipeline {
             							def file = files[k]
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
-								dir (BUILD_NUMBER) {
-									echo "BUILD_NUMBER"
+								echo "{env.WORKSPACE}/${file.path}"
 								}
 							}
 						}
