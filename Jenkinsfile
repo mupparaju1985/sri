@@ -25,7 +25,7 @@ pipeline {
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
 								dir (BUILD_NUMBER) {
-        								writeFile "${file.path}"
+        								writeFile file:"${file.path}"
     								}
         						}
     						}
