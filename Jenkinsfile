@@ -14,10 +14,7 @@ pipeline {
     	stage('Deploy') {
 		         steps {
 				script { 
-					def tempDir = sh script:"mkdir -p $BUILD_NUMBER", returnStdout: true
-					TEMP_DIR = tempDir
-                    			env.TEMP_DIR = TEMP_DIR
-					echo " temo dir $env.TEMP_DIR"
+					sh "mkdir -p $BUILD_NUMBER" > text.txt
 					def workspace = WORKSPACE
 					workspace = env.WORKSPACE
 					echo "Current workspace is ${env.WORKSPACE}"
