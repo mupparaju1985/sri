@@ -28,7 +28,7 @@ pipeline {
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
 								dir ($BUILD_NUMBER) {
-									echo "
+									echo "BUILD_NUMBER"
 								}
 							}
 						}
