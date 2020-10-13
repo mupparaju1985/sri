@@ -31,7 +31,7 @@ pipeline {
         						for (int k = 0; k < files.size(); k++) {
             							def file = files[k]
             							echo "  ${file.editType.name} ${file.path}" 
-								echo "${file.path}" >> tempFolder
+								echo "${file.path}" >> env.TEMP_DIR/Deploymnet.txt
 								echo "${env.WORKSPACE}/${file.path}"
 								echo "${env.WORKSPACE}/$BUILD_NUMBER"
 							}
