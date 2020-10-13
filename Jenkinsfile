@@ -13,6 +13,7 @@ pipeline {
     	stage('Deploy') {
 		         steps {
 				script { 
+					mkdir -p ${BUILD_NUMBER}
 					def workspace = WORKSPACE
 					workspace = env.WORKSPACE
 					echo "Current workspace is ${env.WORKSPACE}"
