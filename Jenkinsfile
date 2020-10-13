@@ -28,8 +28,7 @@ pipeline {
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
 								sh """
-								      mkdir -p ${JENKINS_HOME}/delivery/${artifact}           
-								      cp ${WORKSPACE}/${artifact}/target/${Warfile} ${JENKINS_HOME}/delivery/${artifact}/
+								      mkdir -p ${env.WORKSPACE}/BUILD_NUMBER
 								 """
 							}
     						}
