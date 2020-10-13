@@ -27,6 +27,10 @@ pipeline {
             							def file = files[k]
             							echo "  ${file.editType.name} ${file.path}"
 								echo "${file.path}"
+								sh """
+								      mkdir -p ${JENKINS_HOME}/delivery/${artifact}           
+								      cp ${WORKSPACE}/${artifact}/target/${Warfile} ${JENKINS_HOME}/delivery/${artifact}/
+								 """
 							}
     						}
 					}
