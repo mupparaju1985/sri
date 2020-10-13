@@ -29,6 +29,9 @@ pipeline {
 								echo "${file.path}"
 								echo "${env.WORKSPACE}/${file.path}"
 								echo "${env.WORKSPACE}/$BUILD_NUMBER"
+								dir ("${env.WORKSPACE}/$BUILD_NUMBER") {
+									echo "dir created"
+								}
 							}
 						}
 					}
